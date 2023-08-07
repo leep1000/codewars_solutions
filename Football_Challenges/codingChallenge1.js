@@ -73,16 +73,26 @@ const game = {
 
 // #1 Create one player array for each team (variables 'players1' and 'players2')
 const [player1, players2] = game.players;
-console.log(player1, players2);
 
 // #2 For Bayern Munich (team 1) create one variable ('gk') with the goalkeeper's name, and one array ('fieldPlayers') with all the remaining 10 field players
+const [gk, ...fieldPlayers] = player1;
 
-// #3
+// #3 Create an array 'allPlayers' containing all players of both teams (22 players)
+const allPlayers = [...player1, ...players2];
 
-// #4
+// #4 create a new array ('players1Final') containing all the original team1 players plus 'Thiago', 'Coutinho' and 'Perisic'
+const players1Final = [...player1, "Thiago", "Coutinho", "Perisic"];
 
-// #5
+// #5 Based on the game.odds object, create one variable for each odd (called 'team1', 'draw' and 'team2')
+const { team1, x: draw, team2 } = game.odds;
 
-// #6
+// #6  Write a function ('printGoals') that receives an arbitrary number of player names (not an array) and prints each of them to the console, along with the number of goals that were scored in total (number of player names passed in)
+
+const printGoals = function (...players) {
+  console.log(...players);
+  console.log(players.length);
+};
+
+printGoals(...game.scored);
 
 // #7
