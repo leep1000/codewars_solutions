@@ -12,3 +12,19 @@ const gameEvents = new Map([
   [80, "⚽ GOAL"],
   [92, "� Yellow card"],
 ]);
+
+// #1 Create an array 'events' of the different game events that happened (no duplicates)
+const events = [...new Set(gameEvents.values())];
+console.log(events);
+
+/* #2  After the game has finished, is was found that the yellow card from minute 64 was unfair. 
+So remove this event from the game events log. */
+gameEvents.delete(64);
+console.log(gameEvents);
+
+// Compute and log the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
+console.log(
+  `An event happened, on average, every ${Math.trunc(
+    (gameEvents.size / 90) * 100
+  )} minutes`
+);
