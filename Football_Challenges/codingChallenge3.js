@@ -28,3 +28,12 @@ console.log(
     (gameEvents.size / 90) * 100
   )} minutes`
 );
+
+//  Loop over 'gameEvents' and log each element to the console, marking whether it's in the first half or second half (after 45 min) of the game
+for (const [minute, event] of gameEvents) {
+  console.log(
+    minute <= 45
+      ? `[FIRST HALF] ${minute}: ${event}`
+      : `[SECOND HALF] ${minute}: ${event}`
+  );
+}
