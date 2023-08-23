@@ -41,3 +41,17 @@ const flightsConverter = function (data) {
   }
 };
 flightsConverter(flights);
+
+const flightsConverter2 = function (data) {
+  const separateFlights = data.toLowerCase().split("+");
+  for (const flight of separateFlights) {
+    const [status, fromLocation, toLocation, time] = flight.split(";");
+    const output = `${status.includes("delayed") ? `🔴 Delayed ` : ``}${
+      status.includes("arrival") ? `Arrival` : `Departure`
+    } from ${location3Letters(fromLocation)} to ${location3Letters(
+      toLocation
+    )} (${timeConverter(time)})`;
+    console.log(output);
+  }
+};
+flightsConverter2(flights);
