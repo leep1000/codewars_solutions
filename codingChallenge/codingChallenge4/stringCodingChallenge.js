@@ -42,6 +42,7 @@ const flightsConverter = function (data) {
 };
 flightsConverter(flights);
 
+// Better solution
 const flightsConverter2 = function (data) {
   const separateFlights = data.toLowerCase().split("+");
   for (const flight of separateFlights) {
